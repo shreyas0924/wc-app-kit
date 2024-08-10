@@ -1,11 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-
 import { cookieToInitialState } from "wagmi";
-
 import { config } from "@/config";
 import Web3ModalProvider from "@/context";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Web3ModalProvider initialState={initialState}>
-          {children}
+          <Providers>{children}</Providers>
         </Web3ModalProvider>
       </body>
     </html>
